@@ -52,22 +52,20 @@ class CliInterface extends Daemon
         if (!$this->_userChoiceError($userChoice))
             return false;
 
-        $daemonManager = new Daemon();
-
         switch ($userChoice) {
 
             case 1:
-                $daemonManager->showAllDaemons();
+                $this->showAllDaemons();
                 $this->_waitUser();
                 return true;
 
             case 2:
-                $daemonManager->startDaemon(readline('Введите имя файла: '), readline('Комментарий: '));
+                $this->startDaemon(readline('Введите имя файла: '), readline('Комментарий: '));
                 $this->_waitUser();
                 return true;
 
             case 3:
-                $daemonManager->killDaemon(readline('Введите pid демона: '));
+                $this->killDaemon(readline('Введите pid демона: '));
                 $this->_waitUser();
                 return true;
 
