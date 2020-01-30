@@ -33,6 +33,12 @@ class Daemon
 
     }
 
+    protected function status($pid)
+    {
+        echo "  PID TTY         TIME CMD" . PHP_EOL;
+        echo exec("ps -p " . $pid) . PHP_EOL;
+    }
+
     protected function killDaemon($pid)
     {
         echo exec('kill ' . $pid) . PHP_EOL;

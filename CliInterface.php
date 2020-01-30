@@ -19,6 +19,7 @@ class CliInterface extends Daemon
         echo "1. Показать активные демоны" . PHP_EOL;
         echo "2. Добавить демона" . PHP_EOL;
         echo "3. Удалить демона" . PHP_EOL;
+        echo "4. Состояние процесса". PHP_EOL;
 
     }
 
@@ -66,6 +67,16 @@ class CliInterface extends Daemon
 
             case 3:
                 $this->killDaemon(readline('Введите pid демона: '));
+                $this->_waitUser();
+                return true;
+
+            case 4:
+                $this->status(readline("Введите pid демона: "));
+                $this->_waitUser();
+                return true;
+
+            default:
+                echo "Кажется такого пункта нет :(";
                 $this->_waitUser();
                 return true;
 
