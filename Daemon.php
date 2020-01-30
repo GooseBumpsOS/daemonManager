@@ -9,7 +9,7 @@ define('filename', 'daemonList.xml');
 class Daemon
 {
 
-    private function _startDaemon($daemonName, $comment)
+    protected function startDaemon($daemonName, $comment)
     {
         $pid = exec("nohup php -f " . $daemonName . " > /dev/null 2>&1 & echo $!", $output);
         echo "Демон запущен" . PHP_EOL;
@@ -18,7 +18,7 @@ class Daemon
         $this->_addXmlDoc($pid, $daemonName, $comment);
     }
 
-    private function _showAllDaemons()
+    protected function showAllDaemons()
     {
         $daemonXml = new \SimpleXMLElement(file_get_contents(filename));
 
@@ -33,7 +33,7 @@ class Daemon
 
     }
 
-    private function _killDaemon($pid)
+    protected function killDaemon($pid)
     {
         echo exec('kill ' . $pid) . PHP_EOL;
         echo "Процесс с номером " . $pid . ' удален' . PHP_EOL;

@@ -1,24 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<items>
-    <item>
-        <pid>1212</pid>
-        <command>php -f 1.php</command>
-        <comment>Привет</comment>
-    </item>
-
-    <item>
-        <pid>1212</pid>
-        <command>php -f 1.php</command>
-        <comment>Привет</comment>
-    </item>
-    <item>
-        <pid>1212</pid>
-        <command>php -f 1.php</command>
-        <comment>Привет</comment>
-    </item>
-    <item>
-        <pid>1212</pid>
-        <command>php -f 1.php</command>
-        <comment>Привет</comment>
-    </item>
-</items>
+<items></items>
