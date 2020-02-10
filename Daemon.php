@@ -11,6 +11,13 @@ class Daemon
 
     protected function startDaemon($daemonName, $comment)
     {
+        if (!file_exists($daemonName)){
+         
+            echo "Нет такого файла";
+            return false;
+            
+        }
+        
         $pid = exec("nohup php -f " . $daemonName . " > /dev/null 2>&1 & echo $!", $output);
         echo "Демон запущен" . PHP_EOL;
         echo "PID: " . $pid . PHP_EOL;
